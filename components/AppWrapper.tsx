@@ -7,38 +7,39 @@ import { infuraProvider } from 'wagmi/providers/infura'
 import { SWRConfig } from 'swr'
 import '@rainbow-me/rainbowkit/styles.css';
 
-const { chains, provider } = configureChains(
-  [chain.mainnet],
-  [
-    infuraProvider({
-      priority: 0,
-      apiKey: process.env.NEXT_PUBLIC_INFURA_KEY
-    }),
-    jsonRpcProvider({
-      priority: 1,
-      rpc: (chain) =>
-        chain.id === 1
-          ? { http: 'https://rpc.ankr.com/eth' }
-          : { http: 'https://rpc.ankr.com/eth_goerli' },
-    }),
-    publicProvider({ priority: 2 }),
-  ]
-)
+// const { chains, provider } = configureChains(
+//   [chain.mainnet],
+//   [
+//     infuraProvider({
+//       priority: 0,
+//       apiKey: process.env.NEXT_PUBLIC_INFURA_KEY
+//     }),
+//     jsonRpcProvider({
+//       priority: 1,
+//       rpc: (chain) =>
+//         chain.id === 1
+//           ? { http: 'https://rpc.ankr.com/eth' }
+//           : { http: 'https://rpc.ankr.com/eth_goerli' },
+//     }),
+//     publicProvider({ priority: 2 }),
+//   ]
+// )
 
-const { connectors } = getDefaultWallets({
-  appName: 'Public Assembly',
-  chains,
-})
+// const { connectors } = getDefaultWallets({
+//   appName: 'Public Assembly',
+//   chains,
+// })
 
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-})
+// const wagmiClient = createClient({
+//   autoConnect: true,
+//   connectors,
+//   provider,
+// })
 
 export function AppWrapper({ children }: { children: JSX.Element | JSX.Element[] }) {
   return (
-    <WagmiConfig client={wagmiClient}>
+    <div>
+    {/* <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider
         chains={chains}
         coolMode
@@ -61,6 +62,7 @@ export function AppWrapper({ children }: { children: JSX.Element | JSX.Element[]
           {children}
         </SWRConfig>
       </RainbowKitProvider>
-    </WagmiConfig>
+    </WagmiConfig> */}
+    </div>
   )
 }
