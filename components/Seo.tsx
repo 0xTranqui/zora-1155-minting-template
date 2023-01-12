@@ -4,7 +4,7 @@ const defaultTitle = process.env.NEXT_PUBLIC_SITE_TITLE || '';
 const defaultDescription = process.env.NEXT_PUBLIC_SITE_DESCRIPTION || '';
 const defaultOGURL = process.env.NEXT_PUBLIC_WEBSITE_URL || '';
 const defaultOGImage = `${process.env.NEXT_PUBLIC_WEBSITE_URL}/social-card.png`;
-const favicon = '/favicon.png'
+const favicon = '/zorbDevil_1.png'
 
 type SeoProps = {
   title?: string,
@@ -17,7 +17,7 @@ export function Seo({ title, description, url, ogImage }: SeoProps) {
   return (
     <NextHead>
       <meta charSet="UTF-8" />
-      <title>{title ? `${title} | Public Assembly` : defaultTitle}</title>
+      <title>{title ? `${title} | Private Destruction` : defaultTitle}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={description || defaultDescription} />
       <link rel="icon" type="image/png" sizes="24x24" href={favicon} />
