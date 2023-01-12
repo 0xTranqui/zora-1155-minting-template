@@ -2,7 +2,6 @@
 import concept_1 from "../../public/assets/concept_1.jpeg"
 import concept_2 from "../../public/assets/concept_2.jpeg"
 import concept_3 from "../../public/assets/concept_3.jpeg"
-import PAPD_GRID from "../../public/assets/PAPD_GRID.jpeg"
 import {descriptions} from "./Descriptions";
 import Concept from "./Concept"
 import {useState} from "react";
