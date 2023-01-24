@@ -1,14 +1,15 @@
 import type { NextPage } from 'next'
 import { Seo } from 'components'
-import ConceptDisplay from 'components/layout-v1/ConceptDisplay';
+import MainFeed from 'components/Feed/MainFeed';
+import dynamic from 'next/dynamic';
 
 const Home: NextPage = () => {
   return (
     <>
-      <Seo/>
-      <section id="home-page" className="pb-6">
-        <ConceptDisplay />
+      <section id="home-page" className="pb-6 flex flex-row justify-center h-screen">
+        <MainFeed />
       </section>
+      {/* <Seo/> */}
     </>
   )
 }
