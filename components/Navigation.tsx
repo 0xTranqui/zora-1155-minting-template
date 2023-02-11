@@ -1,12 +1,10 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
-import zorbDevil from "../public/assets/ZorbDevil.png"
 
 const pages = [
   {
     slug: '/',
-    title: 'blog',
+    title: 'home',
   },  
 ]
 
