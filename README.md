@@ -1,1 +1,4 @@
-In contrast to the physical world, only one degree of separation lies between everyone on the internet. This heightened connectivity allows for new models of coordination + creation that are native to the digital realm. Public Assembly will test the best practices for leveraging the unique physics of the internet to *create what’s missing* as fast as possible.
+Steps to run locally
+1. fork repo
+2. yarn
+3. yarn dev
