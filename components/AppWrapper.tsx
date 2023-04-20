@@ -1,7 +1,7 @@
 import NextNProgress from 'nextjs-progressbar'
 import { getDefaultWallets, RainbowKitProvider, lightTheme } from '@rainbow-me/rainbowkit'
 import { createClient, configureChains, WagmiConfig } from 'wagmi'
-import { mainnet } from 'wagmi/chains';
+import { mainnet, goerli } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
@@ -9,7 +9,7 @@ import { SWRConfig } from 'swr'
 import '@rainbow-me/rainbowkit/styles.css';
 
 const { chains, provider } = configureChains(
-  [mainnet],
+  [goerli],
   [
     alchemyProvider({
       priority: 0,
