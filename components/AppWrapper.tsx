@@ -27,7 +27,7 @@ const { chains, provider } = configureChains(
 )
 
 const { connectors } = getDefaultWallets({
-  appName: 'blog',
+  appName: '1155 Minting Template',
   chains,
 })
 
