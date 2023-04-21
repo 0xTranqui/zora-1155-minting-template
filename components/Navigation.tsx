@@ -5,30 +5,20 @@ const pages = [
   {
     slug: '/',
     title: 'home',
-  },  
+  },
 ]
 
 export function Navigation() {
   const router = useRouter()
 
   return (
-    <nav className="text-[35px] flex flex-row items-center gap-8">
+    <nav>
       {pages.map((page) => (
         <Link passHref href={page.slug} key={page.slug}>
-          {/* <a
-            className="hover:underline"
-            style={{
-              fontWeight: router.asPath === page.slug ? 'bold' : 'normal',
-            }}>
-            {page.title}
-          </a> */}
           <div
-            className=""
-            style={{
-              fontWeight: router.asPath === page.slug ? 'bold' : 'normal',
-            }}>
+            className={`${router.asPath === page.slug ? 'underline' : 'no-underline'}`}>
             {page.title}
-          </div>            
+          </div>
         </Link>
       ))}
     </nav>
