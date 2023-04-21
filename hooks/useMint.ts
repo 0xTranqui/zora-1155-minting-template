@@ -3,7 +3,6 @@ import {
   usePrepareContractWrite,
   useContractWrite,
   useWaitForTransaction,
-  useContractEvent,
 } from 'wagmi'
 import { utils, BigNumber } from 'ethers'
 
@@ -14,6 +13,9 @@ const chainId = process.env.NEXT_PUBLIC_CHAIN_ID == '1' ? 1 : 5
 const zoraFee = process.env.NEXT_PUBLIC_CHAIN_ID == '1' ? 777000000000000 : 10000
 
 export function useMint() {
+    
+    const recipientAddress = "0x221C863222b5Da2539b391bC6993f8e14D96e9C8" // refraction dao mainnet address
+
   const { config: prepareConfig, error: prepareError } = usePrepareContractWrite({
     address: zora1155ToMint, // address of collection to mint from
     abi: zoraCreator1155Impl_abi,
@@ -24,11 +26,11 @@ export function useMint() {
       BigNumber.from(1), // `mintQuantity` hardcoded as 1
       utils.defaultAbiCoder.encode(
         ['address'],
-        ['0x153D2A196dc8f1F6b9Aa87241864B3e4d4FEc170']
+        [recipientAddress]
       ) as `0x${string}`,
     ],
     overrides: { value: zoraFee },
-    chainId: chainId,
+    chainId: chainId
   })
 
   const { write, data: writeData, error: writeError } = useContractWrite(prepareConfig)
