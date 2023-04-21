@@ -17,7 +17,7 @@ export function useMint() {
     const recipientAddress = "0x221C863222b5Da2539b391bC6993f8e14D96e9C8" // refraction dao mainnet address
 
   const { config: prepareConfig, error: prepareError } = usePrepareContractWrite({
-    address: zora1155ToMint, // address of collection to mint from
+    address: zora1155ToMint, // address of collection to mint fro
     abi: zoraCreator1155Impl_abi,
     functionName: 'mint',
     args: [
