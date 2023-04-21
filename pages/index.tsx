@@ -5,7 +5,7 @@ const Home: NextPage = () => {
   const { write, data, isError, isLoading, isSuccess, status } = useMint()
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen pb-48">
       <button
         disabled={isLoading}
         onClick={() => write?.()}
